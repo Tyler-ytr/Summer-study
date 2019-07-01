@@ -174,5 +174,22 @@ $$
   4. 一般的函数,有多少的分段就加多少的神经元
 － 可以康康这个[网站](https://towardsdatascience.com/can-neural-networks-really-learn-any-function-65e106617fc6)
 
+## Improving the way neural nets learn
+#### The cross-entropy cost function
+- Reason: 
+  - sigmoid神经元会梯度消失;
+- 解决方式:
+  1. 改善cost-function:
+    $$C=-\frac{1}{n}\sum_x[ylna+(1-y)ln(1-a)]$$
+  2. 推导:
+    - (看不懂)
+  3.  理解: 对于两个概率分布,$p_j,q_j$,cross-entropy(交叉熵)可以定义成$\sum_j p_j q_j$,可以理解成远离程度的度量
 
 
+
+
+
+
+作业可选项:
+1.  项目调参快乐
+2.  讨论cost-function
