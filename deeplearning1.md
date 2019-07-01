@@ -155,8 +155,24 @@ $$
     For each l=L-1,...,2 compute $\sigma^l=((w^{l+1})^T\sigma^{l+1})\odot\sigma'(z^l)$
     5. Output:
     THe gradient of the cost function is given by $\frac{\partial C}{\partial w_{jk}^l}=a_k^{l-1}\delta _j^l$ and  $\frac{\partial C}{\partial b_j^l}=\sigma _j^l$
-
-
+- 一种实现的方法:
+- MINST
+    -traning data:50,000 images
+    - test set: 10,000 images
+- Size of the network:
+  - 784,30,10
+- Hyper-parameters
+  - 30 epochs
+  - mini-atch size: 10
+  - learning rate:$\eta =3.0$
+##   Neural nets to compute any function
+- the universality theorem
+- 感知机的调戏方式:
+  1. ｃ越大越接近阶跃
+  2. -sc来调整位置 
+  3.  可以用两个神经元实现一个bump函数;($s_1,s_2$之间取1,其余为0);
+  4. 一般的函数,有多少的分段就加多少的神经元
+－ 可以康康这个[网站](https://towardsdatascience.com/can-neural-networks-really-learn-any-function-65e106617fc6)
 
 
 
