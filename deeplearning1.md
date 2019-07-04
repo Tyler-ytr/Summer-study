@@ -194,6 +194,19 @@ $$
     - (看不懂)
   3.  理解: 对于两个概率分布,$p_j,q_j$,cross-entropy(交叉熵)可以定义成$\sum_j p_j q_j$,可以理解成远离程度的度量
 
+#### Softmax:
+- Soft max function:
+  $$a_j^L=\frac{e^{z_j^L}}{\sum_j e^{z_j^L}}$$
+- 输出的结果实际上是一个概率分布;
+- 性质:
+  - Monotonicity(单调):
+    - $\frac{a_j^L}{z_k^L}>0 ~(j=k)$
+    - $\frac{a_j^L}{z_k^L}<0 ~(j\neq k)$
+  - Non-iocality 非局域性;
+  - Reversibility
+- 相应的修改cost function为一个对数似然函数:
+  $$C_X=-ln~a_y^L$$
+
 
 
 
