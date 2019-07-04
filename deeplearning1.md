@@ -175,6 +175,15 @@ $$
 － 可以康康这个[网站](https://towardsdatascience.com/can-neural-networks-really-learn-any-function-65e106617fc6)
 
 ## Improving the way neural nets learn
+- 提高的方式:
+  - cross-entropy cosy function(调整cost function);
+  - "Regularization" methods(正则化处理,对数据集进行调整)
+    - L1,L2正则化;
+    - Dropout
+    - Artificial expansion of the traning data
+  - Weights initialization(权重初始化)
+  - Heuristic to choose hyper-parameters;
+  - etc;
 #### The cross-entropy cost function
 - Reason: 
   - sigmoid神经元会梯度消失;
@@ -190,6 +199,8 @@ $$
 
 
 
+
 作业可选项:
-1.  项目调参快乐
-2.  讨论cost-function
+1.  写个python3项目调参快乐;
+2.  讨论cost-function;
+3. 不写作业快乐考试;
