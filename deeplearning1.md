@@ -4,6 +4,7 @@ Kunag yaming Honors School
 吴胜俊教授
 - Textbook: Michael A. Nielsen "Neural NEtworks and Deep Learning 
 - Online version: [链接](http://neuralnetworksanddeeplearning.com)
+- 我找到的中文版:[链接](https://hit-scir.gitbooks.io/neural-networks-and-deep-learning-zh_cn/content/chap1/c1s1.html)
 
 ## Contents:
 - Introduction
@@ -133,9 +134,9 @@ $$
     $$(s\odot t)_j=s_jt_j$$
   - BP:
     1.  the error in the output layer $\sigma ^L$:
-      $$\delta ^l_j=\frac{\partial C}{\partial a_j^L}\sigma^l(z_j^L)$$
-      $$\delta ^L=\bigtriangledown_a C \odot \sigma'(z^L)$$
-      $$\delta ^L=(a^L-y)\odot \sigma'(Z^L)$$
+        $$\delta ^l_j=\frac{\partial C}{\partial a_j^L}\sigma^l(z_j^L)$$
+        $$\delta ^L=\bigtriangledown_a C \odot \sigma'(z^L)$$
+        $$\delta ^L=(a^L-y)\odot \sigma'(Z^L)$$
     2. the error $\sigma ^L$ in terms of the error in the next layer $\sigma ^{l+1}$:
     $$\sigma ^l=((w^{l+1})^T \sigma ^{l+1})\odot \sigma'(z^l)$$ (用来递归求解);
     3. the rate of change of the cost with respect to any bias:
@@ -158,8 +159,10 @@ $$
 - 一种实现的方法:
 - MINST
     -traning data:50,000 images
+    
     - test set: 10,000 images
 - Size of the network:
+  
   - 784,30,10
 - Hyper-parameters
   - 30 epochs
@@ -186,15 +189,16 @@ $$
   - etc;
 #### The cross-entropy cost function
 - Reason: 
+  
   - sigmoid神经元会梯度消失;
 - 解决方式:
   1. 改善cost-function:
-    $$C=-\frac{1}{n}\sum_x[ylna+(1-y)ln(1-a)]$$
+      $$C=-\frac{1}{n}\sum_x[ylna+(1-y)ln(1-a)]$$
   2. 推导:
     - (看不懂)
   3.  理解: 对于两个概率分布,$p_j,q_j$,cross-entropy(交叉熵)可以定义成$\sum_j p_j q_j$,可以理解成远离程度的度量
 
-#### Softmax:
+最后一层Softmax:
 - Soft max function:
   $$a_j^L=\frac{e^{z_j^L}}{\sum_j e^{z_j^L}}$$
 - 输出的结果实际上是一个概率分布;
@@ -206,7 +210,18 @@ $$
   - Reversibility
 - 相应的修改cost function为一个对数似然函数:
   $$C_X=-ln~a_y^L$$
+  - 此时:$\frac{\partial C_x}{\partial b_i^L}=a_j^L-y_j$
+  :$\frac{\partial C_x}{\partial w_{jk}^L}=a_k^{L-1}(a_j^L-y_j)$
 
+####"Regularization" methods(正则化处理)
+- 解决过拟合问题；过拟合: 看到水就判断为李彦宏的矿泉水;
+- 发现过拟合:
+  - 训练集测试集康康;
+- 正则化处理:
+  - L2 regulation:(L2　范数)对于体育cost fycttion 加一个额外的项作为正则项,$\lambda$是自己控制的一个参数;
+  $$C=C_0+\frac{\lambda}{2n} \sum _w w^2$$
+#### Dropout
+- (教材)
 
 
 
@@ -217,3 +232,4 @@ $$
 1.  写个python3项目调参快乐;
 2.  讨论cost-function;
 3. 不写作业快乐考试;
+4.  实际上的标准作业见压缩包的截图 感谢谢逸同学！
